@@ -1,0 +1,117 @@
+7)
+
+--List Balance due from each customer on a specific month
+SELECT
+    c.CustomerID,
+    c.ContactName,
+    SUM(
+        ISNULL(su.Rent, 0) + 
+		ISNULL(jo.EstimatedWeight, 0) / 3 +
+        ISNULL(jo.EstimatedMileage * d.MileageRate, 0)
+    ) AS BalanceDue
+FROM
+    Customer c
+LEFT JOIN
+    JobOrder jo ON c.CustomerID = jo.CustomerID AND MONTH(jo.MoveDate) = 8 -- Replace this integer with the desired month (jan is 1, feb is 2, etc.)
+LEFT JOIN
+    JobDetail jd ON jo.JobOrderID = jd.JobOrderID
+LEFT JOIN
+    Driver d ON jd.DriverID = d.DriverID
+LEFT JOIN
+    StorageUnit su ON jo.UnitID = su.UnitID
+GROUP BY
+    c.CustomerID, c.ContactName
+HAVING
+    SUM(
+		ISNULL(su.Rent, 0) + 
+		ISNULL(jo.EstimatedWeight, 0) / 3 +
+        ISNULL(jo.EstimatedMileage * d.MileageRate, 0)
+    ) > 0;
+
+
+--Calculating amount due to each driver
+
+SELECT
+    d.DriverID,
+    d.DriverName,
+    SUM(
+        jd.ActualMileage * d.MileageRate * 
+        CASE 
+            WHEN d.DrivingRecordRating = 'B' THEN 0.95
+            WHEN d.DrivingRecordRating = 'C' THEN 0.85
+            WHEN d.DrivingRecordRating = 'D' THEN 0.80
+            WHEN d.DrivingRecordRating = 'F' THEN 0.50
+            ELSE 1.00
+        END
+    ) AS AmountDue
+FROM
+    Driver d
+JOIN
+    JobDetail jd ON d.DriverID = jd.DriverID
+JOIN
+    JobOrder jo ON jd.JobOrderID = jo.JobOrderID AND MONTH(jo.MoveDate) = 9 -- Replace this integer with the desired month (jan is 1, feb is 2, etc.)
+GROUP BY
+    d.DriverID, d.DriverName, d.DrivingRecordRating;
+
+
+--Listing Drivers and their corresponding job details
+
+SELECT
+    d.DriverID,
+    d.DriverName,
+    jd.JobDetailID,
+    jd.ActualMileage,
+    jd.ActualWeight,
+    jd.JobOrderID,
+    jd.VehicleID
+FROM
+    Driver d
+JOIN
+    JobDetail jd ON d.DriverID = jd.DriverID;
+
+--Listing net revenue after employees have been paid out
+
+SELECT 
+    jo.MoveDate,
+    SUM(
+        ISNULL(jd.ActualMileage * d.MileageRate * 
+            CASE 
+                WHEN d.DrivingRecordRating = 'B' THEN 0.95
+                WHEN d.DrivingRecordRating = 'C' THEN 0.85
+                WHEN d.DrivingRecordRating = 'D' THEN 0.80
+                WHEN d.DrivingRecordRating = 'F' THEN 0.50
+                ELSE 1.00
+            END, 0) +
+        ISNULL(su.Rent, 0) -
+        ISNULL(e.AnnualSalary / 12, ISNULL(e.HourlyRate * 160, 0))
+    ) AS NetRevenue
+FROM 
+    JobOrder jo
+LEFT JOIN 
+    JobDetail jd ON jo.JobOrderID = jd.JobOrderID
+LEFT JOIN 
+    Driver d ON jd.DriverID = d.DriverID
+LEFT JOIN 
+    StorageUnit su ON jo.UnitID = su.UnitID
+LEFT JOIN 
+    Employee e ON jo.CustomerID = e.EmployeeID
+WHERE 
+    MONTH(jo.MoveDate) = 3 -- Replace this integer with the desired month (jan is 1, feb is 2, etc.)
+GROUP BY 
+    jo.MoveDate;
+
+
+--Listing the storage units that are still available
+SELECT
+    su.UnitID,
+    su.UnitSize,
+    su.Rent,
+    su.WarehouseID
+FROM
+    StorageUnit su
+LEFT JOIN
+    JobOrder jo ON su.UnitID = jo.UnitID AND jo.StoreItems = 1
+WHERE
+    jo.JobOrderID IS NULL;
+
+--

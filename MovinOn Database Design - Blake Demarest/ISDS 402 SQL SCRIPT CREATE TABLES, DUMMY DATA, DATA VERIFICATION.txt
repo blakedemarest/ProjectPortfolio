@@ -1,0 +1,309 @@
+USE MovinOn
+
+-- Creating the Position table
+CREATE TABLE Position (
+    PositionID INT PRIMARY KEY,
+    Title VARCHAR(100) NOT NULL
+);
+
+-- Creating the Warehouse table
+CREATE TABLE Warehouse (
+    WarehouseID VARCHAR(10) PRIMARY KEY,
+    Address VARCHAR(255) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    State VARCHAR(2) NOT NULL,
+    Zip VARCHAR(10) NOT NULL,
+    Phone VARCHAR(15),
+    ClimateControl BIT NOT NULL,
+    SecurityGate BIT NOT NULL
+);
+
+-- Creating the Employee table
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY,
+    EmployeeName VARCHAR(100) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    State VARCHAR(2) NOT NULL,
+    Zip VARCHAR(10) NOT NULL,
+    Phone VARCHAR(15),
+    CellPhone VARCHAR(15),
+    SSN VARCHAR(11) NOT NULL,
+    DateOfBirth DATE NOT NULL,
+    HireDate DATE NOT NULL,
+    TerminationDate DATE,
+    AnnualSalary DECIMAL(10, 2),
+    HourlyRate DECIMAL(10, 2),
+    PositionID INT NOT NULL,
+    WarehouseID VARCHAR(10) NOT NULL,
+    FOREIGN KEY (PositionID) REFERENCES Position(PositionID),
+    FOREIGN KEY (WarehouseID) REFERENCES Warehouse(WarehouseID)
+);
+
+-- Creating the Customer table
+CREATE TABLE Customer (
+    CustomerID INT PRIMARY KEY,
+    CompanyName VARCHAR(255),
+    ContactName VARCHAR(100) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    State VARCHAR(2) NOT NULL,
+    Zip VARCHAR(10) NOT NULL,
+    Phone VARCHAR(15),
+    Email VARCHAR(100) NOT NULL
+);
+
+-- Creating the Job Order table
+CREATE TABLE JobOrder (
+    JobOrderID INT PRIMARY KEY,
+    MoveDate DATE NOT NULL,
+    AddressMovingFrom VARCHAR(255) NOT NULL,
+    AddressMovingTo VARCHAR(255) NOT NULL,
+    EstimatedMileage INT NOT NULL,
+    EstimatedWeight INT NOT NULL,
+    PackingService BIT NOT NULL,
+    HeavyItem BIT NOT NULL,
+    StoreItems BIT NOT NULL,
+    CustomerID INT NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+);
+
+-- Creating the Driver table
+CREATE TABLE Driver (
+    DriverID INT PRIMARY KEY,
+    DriverName VARCHAR(100) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    State VARCHAR(2) NOT NULL,
+    Zip VARCHAR(10) NOT NULL,
+    Phone VARCHAR(15),
+    Email VARCHAR(100) NOT NULL,
+    DrivingRecordRating CHAR(1) NOT NULL,
+    MileageRate DECIMAL(10, 2) NOT NULL
+);
+
+-- Creating the Vehicle table
+CREATE TABLE Vehicle (
+    VehicleID VARCHAR(10) PRIMARY KEY,
+    LicensePlateNumber VARCHAR(10) NOT NULL,
+    NumberOfAxles INT NOT NULL,
+    Color VARCHAR(20) NOT NULL
+);
+
+-- Creating the Job Detail table
+CREATE TABLE JobDetail (
+    JobDetailID INT PRIMARY KEY,
+    ActualMileage INT NOT NULL,
+    ActualWeight INT NOT NULL,
+    JobOrderID INT NOT NULL,
+    DriverID INT NOT NULL,
+    VehicleID VARCHAR(10) NOT NULL,
+    FOREIGN KEY (JobOrderID) REFERENCES JobOrder(JobOrderID),
+    FOREIGN KEY (DriverID) REFERENCES Driver(DriverID),
+    FOREIGN KEY (VehicleID) REFERENCES Vehicle(VehicleID)
+);
+
+-- Creating the Storage Unit table
+CREATE TABLE StorageUnit (
+    UnitID INT PRIMARY KEY,
+    UnitSize VARCHAR(10) NOT NULL,
+    Rent DECIMAL(10, 2) NOT NULL,
+    WarehouseID VARCHAR(10) NOT NULL,
+    FOREIGN KEY (WarehouseID) REFERENCES Warehouse(WarehouseID)
+);
+
+-- Altering the phone number column in Employee table to allow for dashes in phone numbers.
+ALTER TABLE Employee
+ALTER COLUMN Phone VARCHAR(60);
+
+-- Altering the phone number column in Driver table to allow for dashes in phone numbers.
+ALTER TABLE Driver
+ALTER COLUMN Phone VARCHAR(60);
+
+--Adjusting Joborder so UnitID is linked to A Joborder where StoreItems is TRUE
+
+use MovinOn
+
+ALTER TABLE JobOrder
+ADD CONSTRAINT FK_JobOrder_StorageUnit
+FOREIGN KEY (UnitID) REFERENCES StorageUnit(UnitID);
+
+
+--===============================================================================
+--DUMMY DATA
+
+USE MovinOn
+
+-- Inserting dummy data into Position table
+INSERT INTO Position (PositionID, Title) VALUES
+(1, 'General Manager'),
+(2, 'Warehouse Manager'),
+(3, 'Administrative Assistant'),
+(4, 'Accountant'),
+(5, 'Maintenance'),
+(6, 'Moving Assistant'),
+(7, 'Information Systems');
+
+-- Inserting dummy data into Warehouse table
+INSERT INTO Warehouse (WarehouseID, Address, City, State, Zip, Phone, ClimateControl, SecurityGate) VALUES
+('CA-1', '#3 Industrial Park Way', 'Fullerton', 'CA', '90621', '6577383721', 1, 1),
+('NV-1', '8798 Warehouse Rd', 'Las Vegas', 'NV', '89104', '7024568374', 0, 1),
+('AZ-1', '54781 Hixson Pike', 'Phoenix', 'AZ', '85005', '6238972341', 1, 0);
+
+-- Inserting dummy data into Employee table
+-- Updated INSERT statement for the Employee table
+INSERT INTO Employee (EmployeeID, EmployeeName, Address, City, State, Zip, Phone, CellPhone, SSN, DateOfBirth, HireDate, TerminationDate, AnnualSalary, HourlyRate, PositionID, WarehouseID) VALUES
+(101, 'Patrick Brooks', '234 Jennifer Throughway', 'West Paulchester', 'OK', '75367', '+10498112078', '9380057719', '735-48-7187', '1982-07-05', '2021-10-24', NULL, NULL, 36.48, 3, 'NV-1'),
+(102, 'Linda Morrison', '87574 Larry Plaza', 'New Robert', 'MD', '32612', '0015441858052', '6478518392', '841-03-4617', '1986-02-16', '2022-09-21', NULL, 31885.8, NULL, 5, 'NV-1'),
+(103, 'Jeremy Bailey', '00400 Wells Mission Suite 930', 'New Frank', 'TX', '83062', '9536961495', '0012242677185', '737-38-8080', '1989-09-04', '2019-08-05', NULL, 88258.88, NULL, 4, 'NV-1'),
+(104, 'Thomas Costa', '267 Judy Corner Suite 308', 'Lake Austin', 'MO', '24991', '0018861012079', '9517110142', '824-23-1892', '1990-07-28', '2021-10-15', NULL, NULL, 46.75, 3, 'NV-1'),
+(105, 'Brian Gonzalez', '935 Estes Inlet Apt. 053', 'North Christinabury', 'AL', '88505', '0996227192', '5687915931', '604-48-0886', '1969-09-07', '2023-09-24', NULL, 48301.5, NULL, 2, 'AZ-1'),
+(106, 'David Branch', '498 Jones Center', 'Benjaminview', 'TN', '79331', '0019193788746', '4864859571', '474-50-3939', '1961-10-06', '2019-06-11', NULL, 69990.48, NULL, 4, 'AZ-1'),
+(107, 'Michael Alvarado', '4516 Fuller Circle', 'Garyside', 'HI', '89959', '3320234310', '1988323849', '087-64-8076', '1996-04-18', '2021-10-27', NULL, NULL, 43.9, 7, 'NV-1'),
+(108, 'Thomas Dixon', '913 Kathryn Curve Suite 043', 'Lanebury', 'WY', '16908', '6912280029', '0013029802762', '022-53-2008', '1991-08-20', '2022-09-02', NULL, 46324.88, NULL, 5, 'CA-1'),
+(109, 'Hannah Roberts', '308 Smith Freeway Apt. 803', 'Johnmouth', 'MN', '69302', '4053486345', '8961115645', '162-03-6473', '1964-08-26', '2018-02-20', NULL, 78000.00, NULL, 1, 'CA-1'),
+(110, 'Samantha White', '8275 Linda Loaf Suite 009', 'Vincentstad', 'VT', '31540', '0015589433483', '3486538647', '355-67-2934', '1993-10-12', '2020-05-15', NULL, NULL, 28.5, 6, 'AZ-1'),
+(111, 'Brandon Taylor', '1920 Vista Avenue', 'East Michelle', 'AZ', '85022', '6025550199', '6025550100', '555-00-0123', '1981-04-09', '2019-01-01', NULL, 95000.00, NULL, 2, 'AZ-1'),
+(112, 'Megan Clarke', '1130 Pecan Park', 'Jacksonville', 'FL', '32034', '9045550134', '9045550135', '555-01-2345', '1975-06-15', '2017-03-15', NULL, 65000.00, NULL, 1, 'CA-1'),
+(113, 'Olivia Lee', '4468 E North St', 'Orlando', 'FL', '32801', '4075550198', '4075550197', '555-02-3456', '1989-11-25', '2020-11-01', NULL, NULL, 21.5, 3, 'NV-1'),
+(114, 'Ethan Jones', '780 South St', 'Phoenix', 'AZ', '85003', '6235550177', '6235550178', '555-03-4567', '1973-08-10', '2018-07-10', NULL, 85000.00, NULL, 2, 'AZ-1'),
+(115, 'Isabella Martin', '365 Market Rd', 'San Diego', 'CA', '92101', '6195550142', '6195550143', '555-04-5678', '1984-01-05', '2021-04-23', NULL, NULL, 35.5, 6, 'CA-1');
+
+INSERT INTO Customer (CustomerID, CompanyName, ContactName, Address, City, State, Zip, Phone, Email) VALUES
+(201, 'Acme Corp', 'Alice Johnson', '123 Business Blvd', 'Las Vegas', 'NV', '89101', '702-555-0660', 'alice.johnson@acme.com'),
+(202, NULL, 'Bob Smith', '456 Residential Rd', 'Los Angeles', 'CA', '90001', '213-555-0770', 'bob.smith@gmail.com'),
+(203, 'Beta LLC', 'Chris Green', '789 Commercial Ave', 'San Francisco', 'CA', '94105', '415-555-0880', 'chris.green@beta.com'),
+(204, NULL, 'Diana White', '321 Lakeside Ct', 'Reno', 'NV', '89501', '775-555-0990', 'diana.white@gmail.com'),
+(205, 'Gamma Inc', 'Eva Brown', '654 Mountain View', 'Phoenix', 'AZ', '85001', '602-555-0110', 'eva.brown@gamma.com'),
+(206, NULL, 'Frank Moore', '987 East St', 'Las Vegas', 'NV', '89101', '702-555-0220', 'frank.moore@gmail.com'),
+(207, 'Delta Services', 'Grace Hall', '234 West Ave', 'San Diego', 'CA', '92101', '619-555-0330', 'grace.hall@delta.com'),
+(208, NULL, 'Henry Murphy', '567 South Blvd', 'Tucson', 'AZ', '85701', '520-555-0440', 'henry.murphy@gmail.com'),
+(209, 'Epsilon Ltd', 'Irene Taylor', '890 North Circle', 'Sacramento', 'CA', '95814', '916-555-0550', 'irene.taylor@epsilon.com'),
+(210, NULL, 'Jason Lee', '1234 Park Lane', 'Reno', 'NV', '89501', '775-555-0661', 'jason.lee@gmail.com'),
+(211, 'Zeta Co', 'Kathy Young', '4321 Oak Dr', 'Phoenix', 'AZ', '85001', '602-555-0771', 'kathy.young@zeta.com'),
+(212, NULL, 'Larry Foster', '8765 Elm St', 'Las Vegas', 'NV', '89101', '702-555-0881', 'larry.foster@gmail.com'),
+(213, 'Eta Corp', 'Michelle Gomez', '6789 Pine Rd', 'San Francisco', 'CA', '94105', '415-555-0991', 'michelle.gomez@eta.com'),
+(214, NULL, 'Nick Howard', '1357 Willow Path', 'Reno', 'NV', '89501', '775-555-0111', 'nick.howard@gmail.com'),
+(215, 'Theta Inc', 'Olivia Sanders', '2468 Spruce Way', 'San Diego', 'CA', '92101', '619-555-0221', 'olivia.sanders@theta.com');
+
+-- Inserting dummy data into Storage Unit table
+INSERT INTO StorageUnit (UnitID, UnitSize, Rent, WarehouseID) VALUES
+(301, '10x20', 265.22, 'CA-1'),
+(302, '10x5', 333.1, 'AZ-1'),
+(303, '10x15', 463.12, 'AZ-1'),
+(304, '10x20', 224.31, 'AZ-1'),
+(305, '10x15', 477.59, 'CA-1'),
+(306, '10x15', 229.24, 'CA-1'),
+(307, '15x10', 56.42, 'NV-1'),
+(308, '20x10', 481.71, 'NV-1'),
+(309, '5x10', 191.31, 'AZ-1'),
+(310, '15x10', 207.86, 'CA-1'),
+(311, '10x20', 132.11, 'CA-1'),
+(312, '15x15', 414.94, 'CA-1'),
+(313, '5x15', 276.04, 'AZ-1'),
+(314, '10x20', 124.55, 'NV-1'),
+(315, '15x15', 98.8, 'AZ-1');
+
+-- Inserting dummy data into Job Order table
+INSERT INTO JobOrder (JobOrderID, MoveDate, AddressMovingFrom, AddressMovingTo, EstimatedMileage, EstimatedWeight, PackingService, HeavyItem, StoreItems, CustomerID) VALUES
+(401, '2023-11-22', '16997 Mark Garden Apt. 322\nNorth Melissaborough, LA 39112', 'Unit 7416 Box 1691\nDPO AA 71801', 138, 3433, 1, 0, 1, 209),
+(402, '2023-12-25', '328 Pruitt Ports\nBatesbury, OH 26820', '70055 Jacob Point Suite 225\nSmithstad, LA 43719', 69, 9452, 1, 1, 1, 201),
+(403, '2023-10-04', '409 Kelly Coves Apt. 542\nAmyport, KY 17523', '62582 Lewis Expressway\nLake Latasha, ID 58792', 232, 911, 0, 1, 0, 204),
+(404, '2023-12-02', '29415 Thomas Heights\nCarpenterborough, NJ 41039', '316 Norman Radial\nAshleyberg, DE 05999', 234, 4728, 1, 1, 0, 212),
+(405, '2024-04-06', '105 Michael Viaduct Apt. 257\nSeanton, IL 92239', '405 Richard Shores Suite 813\nWest Andrewville, SC 21734', 185, 5655, 0, 0, 0, 202),
+(406, '2023-08-14', '49707 Murphy Road\nBirdview, RI 90786', '031 Taylor Radial Apt. 219\nWilsonchester, ID 02414', 306, 3927, 1, 0, 1, 213),
+(407, '2024-04-21', '61468 Jose Rest\nWest Matthew, NY 31851', 'USS Good\nFPO AP 95351', 46, 9094, 0, 0, 1, 212),
+(408, '2023-10-22', '0352 Elizabeth Run Apt. 273\nTimothymouth, NH 61811', 'USCGC Spence\nFPO AE 61638', 86, 320, 0, 0, 0, 215),
+(409, '2023-08-03', '284 Zachary Alley\nBrownstad, LA 05299', '50497 Ryan Street\nNorth Casey, ID 06280', 63, 5176, 1, 1, 1, 211),
+(410, '2023-10-18', 'Unit 4492 Box 7744\nDPO AP 50031', '115 Thompson Heights Suite 855\nMurphyburgh, DC 58762', 408, 2042, 1, 0, 0, 213),
+(411, '2023-09-04', '6244 Stephanie Manor\nPort Amanda, AZ 85885', '13391 Shannon Parkway Apt. 605\nMartinezside, OH 64809', 294, 4429, 1, 0, 1, 215),
+(412, '2024-03-13', '29240 Melanie Spurs\nShanefort, NE 01808', '5261 John Courts Apt. 235\nNew Christybury, NV 43545', 313, 3987, 0, 0, 0, 206),
+(413, '2023-10-22', '2562 Kenneth Keys\nEast Sandra, NY 48420', '74237 Vazquez Trafficway Apt. 266\nSouth Sarabury, TN 74374', 181, 5160, 0, 0, 0, 203),
+(414, '2024-02-10', '43840 Nicole Viaduct Apt. 722\nNorth Bethtown, GA 59185', '9463 Brandon Isle\nLisafort, OK 68133', 394, 7380, 1, 0, 0, 209),
+(415, '2023-05-30', '02301 Williams Plains\nGonzalezton, WY 05113', '248 Fernandez Meadow Suite 708\nKruegerville, NE 08355', 36, 5242, 0, 1, 1, 212);
+
+-- Inserting dummy data into the Driver table
+INSERT INTO Driver (DriverID, DriverName, Address, City, State, Zip, Phone, Email, DrivingRecordRating, MileageRate) VALUES
+(501, 'Joshua Henry', '10736 Grace Shoal Apt. 719\nNorth Thomas, NM 60574', 'Lake Cynthiatown', 'UT', '31847', '+1-819-120-9636x56022', 'jessica94@johnson.com', 'B', 2.78),
+(502, 'Amanda Edwards', '9504 Jacqueline Place Apt. 462\nWashingtonshire, GA 72667', 'South Michaelchester', 'WI', '73209', '132-599-8066', 'christinafigueroa@payne.biz', 'D', 1.45),
+(503, 'Belinda Carter', '2364 Quinn Ways Apt. 407\nStoneville, MN 59595', 'Rogersfort', 'CA', '86931', '737-843-0278x24890', 'josegreene@bowers.biz', 'D', 2.9),
+(504, 'Kathryn Benson', '29532 Juan Summit Apt. 433\nWest Markton, MT 72178', 'Richardsstad', 'NM', '20733', '142.545.8709x349', 'toddmills@gardner.com', 'A', 1.28),
+(505, 'Patrick Porter', '6361 John Knolls Suite 709\nLake Heather, DE 17102', 'Hamiltonton', 'IN', '67832', '458-649-0248x742', 'riveramichael@johnson.org', 'F', 2.26),
+(506, 'David Drake', '13886 Samantha Ranch\nWest Nicole, MO 19789', 'East Stephaniestad', 'NV', '32662', '001-078-417-3073x372', 'brandon34@yahoo.com', 'D', 0.51),
+(507, 'Greg Morales', '70235 John Mall Apt. 847\nJimport, OH 04110', 'Port Lisamouth', 'AK', '54663', '020-181-3266x976', 'heidi12@schwartz.com', 'C', 1.99),
+(508, 'Rebecca Doyle', '66406 Cook Lock Apt. 219\nSouth Nicole, GA 69599', 'Lake Christine', 'SC', '73546', '096-837-4600', 'juliejohnson@yahoo.com', 'B', 1.99),
+(509, 'Jon Brown', '04517 Tyler Cliffs\nNorth Mary, IN 64565', 'East Jennifer', 'NV', '00505', '589-346-0039x765', 'dibarra@mcpherson.biz', 'A', 1.5),
+(510, 'Donald Walton', '356 Michael Dam Apt. 766\nVickiport, UT 05257', 'North Annettefort', 'MT', '57605', '001-681-203-6742x99526', 'bjohnson@johnson-wong.com', 'C', 1.89),
+(511, 'Jesse Graham', '58872 Jeremy Parks Apt. 034\nNew Christopherburgh, MA 27757', 'Rubioville', 'NH', '87450', '6526302383', 'brianna76@cooper.com', 'D', 1.2),
+(512, 'Spencer Miranda', '3749 Lauren Key\nSouth Mariahaven, IA 81073', 'East Ashley', 'CA', '20444', '(240)283-7728x637', 'simmonstroy@guerra.net', 'C', 2.39),
+(513, 'Rhonda Rogers', '258 Novak Avenue Apt. 676\nWest Lauren, DC 08818', 'New Stephanieburgh', 'TX', '42994', '353-365-0209x093', 'david10@yahoo.com', 'F', 2.96),
+(514, 'Brittany Bennett', '8428 Carl Ranch\nNorth Briannastad, AK 33333', 'Port Sheriview', 'OH', '55896', '4863294864', 'scotttraci@hotmail.com', 'F', 1.14),
+(515, 'Jose King', '404 Cesar Cliff Apt. 149\nNorth Zacharyhaven, CA 31565', 'North Saraside', 'TN', '42477', '+1-188-789-5541x97691', 'mjackson@hotmail.com', 'F', 2.67);
+
+-- Inserting dummy data into Vehicle table
+INSERT INTO Vehicle (VehicleID, LicensePlateNumber, NumberOfAxles, Color) VALUES
+('TRK-001', '4JTY328', 2, 'Blue'),
+('VAN-002', '7BVC920', 2, 'Red'),
+('TRK-003', '3SGR213', 3, 'Green'),
+('VAN-004', '8HGT524', 2, 'Black'),
+('TRK-005', '5FDR798', 4, 'White'),
+('VAN-006', '6ERT302', 2, 'Silver'),
+('TRK-007', '1SGT234', 3, 'Blue'),
+('VAN-008', '2FDR456', 2, 'Red'),
+('TRK-009', '9HGB768', 4, 'Green'),
+('VAN-010', '0RGV435', 2, 'Black'),
+('TRK-011', '8JNB234', 3, 'White'),
+('VAN-012', '3HGT678', 2, 'Silver'),
+('TRK-013', '4FRG321', 3, 'Blue'),
+('VAN-014', '7DFR453', 2, 'Red'),
+('TRK-015', '6YUH567', 4, 'Green');
+
+-- Inserting updated dummy data into the Job Detail table with specific ID ranges
+INSERT INTO JobDetail (JobDetailID, ActualMileage, ActualWeight, JobOrderID, DriverID, VehicleID) VALUES
+(601, 120, 2000, 401, 501, 'TRK-001'),
+(602, 150, 2500, 402, 502, 'VAN-002'),
+(603, 90, 1800, 403, 503, 'TRK-003'),
+(604, 200, 3500, 404, 504, 'VAN-004'),
+(605, 300, 4500, 405, 505, 'TRK-005'),
+(606, 140, 2200, 406, 506, 'VAN-006'),
+(607, 160, 2400, 407, 507, 'TRK-007'),
+(608, 80, 1600, 408, 508, 'VAN-008'),
+(609, 250, 3000, 409, 509, 'TRK-009'),
+(610, 180, 2800, 410, 510, 'VAN-010'),
+(611, 170, 2600, 411, 511, 'TRK-011'),
+(612, 100, 1900, 412, 512, 'VAN-012'),
+(613, 220, 3200, 413, 513, 'TRK-013'),
+(614, 130, 2100, 414, 514, 'VAN-014'),
+(615, 190, 2900, 415, 515, 'TRK-015');
+
+-- Update the UnitID for JobOrders where StoreItems is TRUE
+WITH StorageUnitCTE AS (
+    SELECT 
+        UnitID,
+        ROW_NUMBER() OVER (ORDER BY UnitID) AS RowNum
+    FROM 
+        StorageUnit
+    WHERE 
+        UnitID BETWEEN 301 AND 315
+        AND UnitID NOT IN (
+            SELECT UnitID 
+            FROM JobOrder 
+            WHERE StoreItems = 1
+            AND UnitID IS NOT NULL
+        )
+),
+JobOrderCTE AS (
+    SELECT 
+        JobOrderID,
+        ROW_NUMBER() OVER (ORDER BY JobOrderID) AS RowNum
+    FROM 
+        JobOrder
+    WHERE 
+        StoreItems = 1
+)
+
+UPDATE jo
+SET jo.UnitID = su.UnitID
+FROM JobOrder jo
+JOIN JobOrderCTE joc ON jo.JobOrderID = joc.JobOrderID
+JOIN StorageUnitCTE su ON joc.RowNum = su.RowNum;
