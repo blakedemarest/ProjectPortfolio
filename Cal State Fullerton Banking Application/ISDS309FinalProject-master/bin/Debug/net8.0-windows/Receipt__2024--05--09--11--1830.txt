@@ -1,0 +1,16 @@
+Session Start: 5/9/2024 11:18:31 AM
+User: blake d
+Checking account balance: $400
+Savings account balance: $1300
+===================
+Transaction Type: Withdrawal
+Amount: $200
+Account Type: Checking
+Balance After Transaction: $200
+Timestamp: 5/9/2024 11:18:36 AM
+-------------------
+Session End: 5/9/2024 11:18:38 AM
+User: blake d
+Checking account balance: $200
+Savings account balance: $1300
+===================

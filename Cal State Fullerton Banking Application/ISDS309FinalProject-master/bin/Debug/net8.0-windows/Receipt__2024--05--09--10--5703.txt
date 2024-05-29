@@ -1,0 +1,5 @@
+Session Start: 5/9/2024 10:57:03 AM
+User: blake d
+Checking account balance: $400
+Savings account balance: $900
+===================

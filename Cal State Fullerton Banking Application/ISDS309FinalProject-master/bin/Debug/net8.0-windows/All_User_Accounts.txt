@@ -1,0 +1,12 @@
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+UserID,First Name,Last Name,Username,Password,Checking Account Balance,Savings Account Balance
+j8rT3L6ylT6u8lgXD3mb,blake,d,blaked,blaked,$200.00,$1300.00

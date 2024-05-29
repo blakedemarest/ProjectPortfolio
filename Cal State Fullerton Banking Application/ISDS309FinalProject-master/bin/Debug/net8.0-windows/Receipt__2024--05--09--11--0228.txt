@@ -1,0 +1,11 @@
+Session Start: 5/9/2024 11:02:28 AM
+User: blake d
+Checking account balance: $400
+Savings account balance: $900
+===================
+Transaction Type: Deposit
+Amount: $200
+Account Type: Savings
+Balance After Transaction: $1100
+Timestamp: 5/9/2024 11:02:34 AM
+-------------------

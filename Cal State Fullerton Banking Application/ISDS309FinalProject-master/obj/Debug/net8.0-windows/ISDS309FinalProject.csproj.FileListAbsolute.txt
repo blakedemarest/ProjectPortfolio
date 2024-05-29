@@ -1,0 +1,72 @@
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.balanceFrm.resources
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.depositFrm.resources
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.CreateAccountFrm.resources
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.mainmenuFrm.resources
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.Properties.Resources.resources
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.transferFrm.resources
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.withdrawalFrm.resources
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.csproj.GenerateResource.cache
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.AssemblyInfoInputs.cache
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.AssemblyInfo.cs
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.exe
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.deps.json
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.runtimeconfig.json
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.dll
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.pdb
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.dll
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\refint\ISDS309FinalProject.dll
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.pdb
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.genruntimeconfig.cache
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ref\ISDS309FinalProject.dll
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.ChooseAccountFrm.resources
+C:\Users\Blake\OneDrive - Cal State Fullerton\Desktop\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.Form1_LoginFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.balanceFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.ChooseAccountFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.CreateAccountFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.depositFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.Form1_LoginFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.mainmenuFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.Properties.Resources.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.transferFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.withdrawalFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.csproj.GenerateResource.cache
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.AssemblyInfoInputs.cache
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.AssemblyInfo.cs
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.dll
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\refint\ISDS309FinalProject.dll
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.pdb
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.exe
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.deps.json
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.runtimeconfig.json
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.dll
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.pdb
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.genruntimeconfig.cache
+C:\Users\Earth\Desktop\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ref\ISDS309FinalProject.dll
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.exe
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.deps.json
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.runtimeconfig.json
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.dll
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\bin\Debug\net8.0-windows\ISDS309FinalProject.pdb
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.balanceFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.ChooseAccountFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.CreateAccountFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.depositFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.Form1_LoginFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.mainmenuFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.Properties.Resources.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.transferFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.withdrawalFrm.resources
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.csproj.GenerateResource.cache
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.AssemblyInfoInputs.cache
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.AssemblyInfo.cs
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.dll
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\refint\ISDS309FinalProject.dll
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.pdb
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ISDS309FinalProject.genruntimeconfig.cache
+C:\Users\Earth\Desktop\ISDS309FinalProject-master (3)\ISDS309FinalProject-master\ISDS309FinalProject-master\obj\Debug\net8.0-windows\ref\ISDS309FinalProject.dll
