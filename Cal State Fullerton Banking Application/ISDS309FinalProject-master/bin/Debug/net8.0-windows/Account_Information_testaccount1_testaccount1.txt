@@ -1,6 +1,0 @@
-UserID: Z3hoPKGKU3GUL3g5j4hg
-First Name: testaccount1
-Last Name: testaccount1
-Username: testaccount11
-Password: testaccount1
-Account Balance: 
