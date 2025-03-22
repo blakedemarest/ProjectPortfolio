@@ -1,0 +1,123 @@
+<html>
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 12px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 4px 6px;
+      vertical-align: top;
+    }
+    .header {
+      font-weight: bold;
+      background-color: #f2f2f2;
+    }
+    .highlight {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td colspan="4" class="header">Use Case Description</td>
+    </tr>
+    <tr>
+      <td colspan="2">Use Case Name: Create a Conference Booking</td>
+      <td>ID: CRB_002</td>
+      <td>Priority: High</td>
+    </tr>
+    <tr>
+      <td colspan="4">Actor(s): Booking Specialist</td>
+    </tr>
+    <tr>
+      <td colspan="4">Description: This use case describes how the Booking Specialist manages reservation requests for the Cowboy Hotel's conference booking system.</td>
+    </tr>
+    <tr>
+      <td colspan="4">Trigger: A customer requests a conference room reservation through a booking specialist.</td>
+    </tr>
+    <tr>
+      <td colspan="4">Type: <span class="highlight">External</span> / Temporal</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="header">Major Inputs:</td>
+      <td colspan="2" class="header">Major Outputs:</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>Source</td>
+      <td>Description</td>
+      <td>Destination</td>
+    </tr>
+    <tr>
+      <td>Booking details (date, time, capacity, services)</td>
+      <td>Booking Specialist</td>
+      <td>Reservation ID</td>
+      <td>Booking System</td>
+    </tr>
+    <tr>
+      <td>Customer information</td>
+      <td>Booking Specialist</td>
+      <td>Confirmation details</td>
+      <td>Customer</td>
+    </tr>
+    <tr>
+      <td>Payment details</td>
+      <td>Booking Specialist</td>
+      <td>Updated room availability</td>
+      <td>Reservation Database</td>
+    </tr>
+    <tr>
+      <td>Service requests (catering, AV)</td>
+      <td>Booking Specialist</td>
+      <td>Payment record</td>
+      <td>Payment System</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="header">Major Steps Performed</td>
+      <td colspan="2" class="header">Information for Steps</td>
+    </tr>
+    <tr>
+      <td colspan="2">1. Specialist selects “Create New Booking”.</td>
+      <td colspan="2">Booking system interface options</td>
+    </tr>
+    <tr>
+      <td colspan="2">2. Specialist inputs booking details and retrieves stored customer information.</td>
+      <td colspan="2">Booking form fields; Customer database</td>
+    </tr>
+    <tr>
+      <td colspan="2">3. System displays available rooms based on requested information.</td>
+      <td colspan="2">Requested date/time; Room availability data</td>
+    </tr>
+    <tr>
+      <td colspan="2">4. Specialist selects a room and additional services.</td>
+      <td colspan="2">Room list; Service menu</td>
+    </tr>
+    <tr>
+      <td colspan="2">5. System calculates total fee.</td>
+      <td colspan="2">Room rates; Service pricing</td>
+    </tr>
+    <tr>
+      <td colspan="2">6. Specialist confirms fee with customer and initiates payment.</td>
+      <td colspan="2">Fee details; Payment system interface</td>
+    </tr>
+    <tr>
+      <td colspan="2">7. System creates Reservation ID and stores booking.</td>
+      <td colspan="2">Reservation ID; Booking log</td>
+    </tr>
+    <tr>
+      <td colspan="2">8. Specialist updates status to “Confirmed” upon payment verification.</td>
+      <td colspan="2">Payment confirmation; Booking status</td>
+    </tr>
+    <tr>
+      <td colspan="2">9. System sends confirmation to customer.</td>
+      <td colspan="2">Confirmation email; Customer contact info</td>
+    </tr>
+  </table>
+</body>
+</html>

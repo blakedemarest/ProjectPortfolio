@@ -1,0 +1,162 @@
+<html>
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 12px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 4px 6px;
+      vertical-align: top;
+    }
+    .header {
+      font-weight: bold;
+      background-color: #f2f2f2;
+    }
+    .highlight {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td colspan="4" class="header">Use Case Description</td>
+    </tr>
+    <tr>
+      <td colspan="2">Use Case Name: Conference Room Booking</td>
+      <td>ID: CRB-001</td>
+      <td>Importance Level: High</td>
+    </tr>
+    <tr>
+      <td colspan="4">Primary Actor: Customer</td>
+    </tr>
+    <tr>
+      <td colspan="4">Short Description: This describes how a customer selects and reserves a conference room through the Cowboy Hotel Conference Room Booking System.</td>
+    </tr>
+    <tr>
+      <td colspan="4">Trigger: Customer calls to book a conference room or submits a booking request online.</td>
+    </tr>
+    <tr>
+      <td colspan="4">Type: <span class="highlight">External</span> / Temporal</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="header">Major Inputs:</td>
+      <td colspan="2" class="header">Major Outputs:</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>Source</td>
+      <td>Description</td>
+      <td>Destination</td>
+    </tr>
+    <tr>
+      <td>Customer name</td>
+      <td>Customer</td>
+      <td>Confirmed reservation</td>
+      <td>Customer</td>
+    </tr>
+    <tr>
+      <td>Desired room</td>
+      <td>Customer</td>
+      <td>Reserved time slot</td>
+      <td>Booking System</td>
+    </tr>
+    <tr>
+      <td>Desired date and time</td>
+      <td>Customer</td>
+      <td>Confirmation email</td>
+      <td>Customer</td>
+    </tr>
+    <tr>
+      <td>Contact information</td>
+      <td>Customer</td>
+      <td>Catering order</td>
+      <td>Hotel Manager</td>
+    </tr>
+    <tr>
+      <td>Available rooms</td>
+      <td>Booking System</td>
+      <td>Booking report</td>
+      <td>Booking Specialist</td>
+    </tr>
+    <tr>
+      <td>Existing reservations</td>
+      <td>Reservation database</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="header">Major Steps Performed</td>
+      <td colspan="2" class="header">Information for Steps</td>
+    </tr>
+    <tr>
+      <td colspan="2">1. Get customer's name. Verify customer in system.</td>
+      <td colspan="2">
+        Customer name<br>
+        Customer database
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">2. If new customer, get contact information and create new customer record.</td>
+      <td colspan="2">
+        Contact information<br>
+        Organization details<br>
+        New customer record
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">3. Get desired room, date, and time slot.</td>
+      <td colspan="2">
+        Desired room<br>
+        Desired date<br>
+        Desired time slot
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">4. Check room availability for requested time slot in Reservation database.</td>
+      <td colspan="2">
+        Available rooms<br>
+        Existing reservations<br>
+        Room capacity
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">5. If room is available, create reservation in system. If unavailable, suggest alternatives.</td>
+      <td colspan="2">
+        Room availability<br>
+        Alternative slots<br>
+        Confirmation details
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">6. Record catering requests if applicable and flag for manager approval.</td>
+      <td colspan="2">
+        Catering options<br>
+        Catering requests<br>
+        Manager approval flag
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">7. Booking specialist reviews and confirms reservation.</td>
+      <td colspan="2">
+        Reservation details<br>
+        Specialist approval<br>
+        Booking system
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">8. Send confirmation to customer with reservation details.</td>
+      <td colspan="2">
+        Confirmation email<br>
+        Reservation ID<br>
+        Customer details
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<html>
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 12px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 4px 6px;
+      vertical-align: top;
+    }
+    .header {
+      font-weight: bold;
+      background-color: #f2f2f2;
+    }
+    .highlight {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td colspan="4" class="header">Use Case Description</td>
+    </tr>
+    <tr>
+      <td colspan="2">Use Case Name: Conference Room Booking Modification</td>
+      <td>ID: CRB_003</td>
+      <td>Importance Level: High</td>
+    </tr>
+    <tr>
+      <td colspan="4">Primary Actor: Customer</td>
+    </tr>
+    <tr>
+      <td colspan="4">Short Description: This describes how a customer modifies an existing reservation through the Cowboy Hotel Conference Room Booking System.</td>
+    </tr>
+    <tr>
+      <td colspan="4">Trigger: Customer calls to book a conference room or submits a booking request online.</td>
+    </tr>
+    <tr>
+      <td colspan="4">Type: <span class="highlight">External</span> / Temporal</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="header">Major Inputs:</td>
+      <td colspan="2" class="header">Major Outputs:</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>Source</td>
+      <td>Description</td>
+      <td>Destination</td>
+    </tr>
+    <tr>
+      <td>Customer name</td>
+      <td>Customer</td>
+      <td>Updated reservation</td>
+      <td>Customer</td>
+    </tr>
+    <tr>
+      <td>Reservation ID</td>
+      <td>Customer</td>
+      <td>Confirmation Email</td>
+      <td>Customer</td>
+    </tr>
+    <tr>
+      <td>New date and time</td>
+      <td>Customer</td>
+      <td>Updated booking</td>
+      <td>Booking System</td>
+    </tr>
+    <tr>
+      <td>Reason for modification</td>
+      <td>Customer</td>
+      <td>Update email to manager</td>
+      <td>Hotel Manager</td>
+    </tr>
+    <tr>
+      <td>Available rooms</td>
+      <td>Booking System</td>
+      <td>Booking modification report</td>
+      <td>Booking Specialist</td>
+    </tr>
+    <tr>
+      <td>Existing reservations</td>
+      <td>Reservation database</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="header">Major Steps Performed</td>
+      <td colspan="2" class="header">Information for Steps</td>
+    </tr>
+    <tr>
+      <td colspan="2">1. Verify customer identity.</td>
+      <td colspan="2">Customer name<br>Reservation ID<br>Customer database</td>
+    </tr>
+    <tr>
+      <td colspan="2">2. Retrieve existing booking details from the database.</td>
+      <td colspan="2">Open request form<br>Contact information<br>Reservation details<br>Reservation database</td>
+    </tr>
+    <tr>
+      <td colspan="2">3. Get modification request from customer.</td>
+      <td colspan="2">Desired room<br>Desired date<br>Desired time slot</td>
+    </tr>
+    <tr>
+      <td colspan="2">4. Check room availability for updated details in the database.</td>
+      <td colspan="2">Available rooms<br>Existing reservations<br>Room capacity<br>Desired dates</td>
+    </tr>
+  </table>
+</body>
+</html>
